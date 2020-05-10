@@ -1,3 +1,6 @@
+decrit moi une infra de micro service
+decrit moi um pipeline de deploiment automatiser
+comment tu automatise ume infra 10000 vm avec le monitoring
 vagrant init
 vagrant status
 vagrant up -- to start the install of machines
@@ -52,6 +55,8 @@ systemctl enable --now kubelet
 * initilisation sur le master
 
 # Setup required sysctl params, these persist across reboots.
+Gestion du reseau
+
 cat > /etc/sysctl.d/99-kubernetes-cri.conf <<EOF
 net.bridge.bridge-nf-call-iptables  = 1
 net.ipv4.ip_forward                 = 1
@@ -68,3 +73,6 @@ To start using your cluster, you need to run the following as a regular user:
   mkdir -p $HOME/.kube
   sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
   sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/a70459be0084506e4ec919aa1c114638878db11b/Documentation/kube-flannel.yml
+ apps/v1
