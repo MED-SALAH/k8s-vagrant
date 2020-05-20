@@ -2,6 +2,9 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: monpod
+  namespace: saleh
+  labels:
+    env: dev
 spec:
   containers:
     - name: nginx
