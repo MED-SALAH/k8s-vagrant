@@ -2,12 +2,15 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: monpod
-  namespace: saleh
-  labels:
-    env: dev
+  #namespace: saleh
+  #labels:
+  #  env: dev
 spec:
   containers:
     - name: nginx
       image: nginx
       ports:
         - containerPort: 80
+    - name: mondebian
+      image: debian
+      command: ["sleep","600"]
